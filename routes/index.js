@@ -1,7 +1,11 @@
 const artistsRouter = require("./api/artistsRouter");
-const categoriesRouter = require("./api/categoriesRouter");
+const genresRouter = require("./api/genresRouter");
+const authRouter = require("./api/authRouter");
+const feedbacksRouter = require("./api/feedbacksRouter");
 
 module.exports = {
   artistsRouter,
-  categoriesRouter,
+  genresRouter,
+  authRouter,
+  feedbacksRouter,
 };

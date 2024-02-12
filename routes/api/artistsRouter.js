@@ -1,21 +1,28 @@
 const { createRouter } = require("../../helpers");
+const { artistsControllers: c } = require("../../controllers");
+const { authenticate, validateArtistSearching } = require("../../middlewares");
 
+// const defaultMiddlewares = [authenticate];
 const defaultMiddlewares = [];
 
-const usersRouterOptions = [
+const artistsRouterOptions = [
   {
     method: "get",
     route: "/",
+    middlewares: [validateArtistSearching],
+    controller: c.getArtists,
+  },
+  {
+    method: "get",
+    route: "/:id",
     middlewares: null,
-    controller: (req, res, next) => {
-      res.json("usersRouter get");
-    },
+    controller: c.getArtistById,
   },
 ];
 
 const artistsRouter = createRouter({
   defaultMiddlewares,
-  options: usersRouterOptions,
+  options: artistsRouterOptions,
 });
 
 artistsRouter.setRouter();
