@@ -11,7 +11,7 @@
   },
   "servers": [
     {
-      "url": "https://sound-wave-backend.p.goit.global/api/"
+      "url": "https://sound-wave.b.goit.global/api/"
     },
     {
       "url": "http://localhost:4040/api/"
